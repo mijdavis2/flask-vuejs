@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+if [ ! "$VIRTUAL_ENV" ]
+then
+    echo "Creating virtual environment.." && \
+    tox -e dev && \
+    echo "Activating virtual environment.." && \
+    . .tox/dev/bin/activate
+else
+    echo "Can't launch a virtual env when already in a virtual env. (VIRTUAL_ENV variable is set)"
+fi
